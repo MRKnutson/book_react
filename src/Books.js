@@ -4,6 +4,7 @@ import NewBook from "./NewBook";
 
 const Books = (props) => {
   const [books, setBooks] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(()=>{
     // do stuff when component mounts
@@ -52,7 +53,9 @@ const Books = (props) => {
   return (
     <div className="contain-all">
       <h1>Books below:</h1>
-      <NewBook new ={newBook}/>
+      <button onClick ={()=>setShowForm(!showForm)}>New Book Entry</button>
+      { showForm &&
+      <NewBook new ={newBook} setShowForm={setShowForm}/>}
       {renderBooks()}
     </div>
   );

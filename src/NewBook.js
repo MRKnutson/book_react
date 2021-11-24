@@ -12,7 +12,8 @@ const NewBook = (props) => {
   // set up handler for when form is submitted - note props.new - "new" must match whats passed in from main js file
   const handleSubmit = (event) => {
     event.preventDefault()
-    props.new({title: title, author: author, genre: genre, description: description, isbn: Math.floor(1000000000000 + Math.random() * 900000000000)})
+    props.new({title: title, author: author, genre: genre, description: description, isbn: Math.floor(9700000000000 + Math.random() * 90000000000)})
+    props.setShowForm(false)
   };
 
   // Create form
